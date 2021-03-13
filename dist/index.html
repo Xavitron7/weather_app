@@ -5,14 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet"> 
     <title>Weather App</title>
 </head>
 <body>
-    <div class="container">
+    <div id="container">
         <header>
-            <h1>Weather App!</h1>
+            <h1>Weather App</h1>
             <p>Search for the weather, anywhere in the world.</p>
         </header>
+        <section id="weather-section">
+            <div id="image-container"><img src="https://openweathermap.org/img/wn/10d@2x.png"></div>
+            <div id="description"><p id="desc-text">rain</p></div>
+            <div id="location"><p id="city"></p></div>
+            <div id="error-div" class="hidden"><p>City not found. Please try again.</p></div>
+            <div id="temp-div">
+                <p id="temp-text"><span class="temp-cat">Temperature:</span></p>
+                <p id="feel-text"><span class="temp-cat">Feels like:</span></p>
+                <p id="max-text"><span class="temp-cat">Max temperature:</span></p>
+                <p id="min-text"><span class="temp-cat">Min temperature:</span></p>
+                <p id="humid-text"><span class="temp-cat">Humidity:</span></p>
+            </div>
+            <div id="unit-div"><button id="unit-button" class="button um-c">C</button></div>
+
+        </section>
+        <section id="form-section">
+            <form id="form" method="GET" action="">
+                <label for="city-search">City search</label>
+                <input type="text" placeholder="e.g. London or London, UK" id="search" pattern="[\D]+" required>
+                <button type="submit" id="submit-button" class="button">Search</button>
+            </form>
+
+        </section>
     </div>
     
     <script src="main.js"></script>
