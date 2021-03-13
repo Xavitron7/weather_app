@@ -1,10 +1,12 @@
-async function apiCall() {
-    const response = await fetch("http://api.openweathermap.org/data/2.5/weather?q=Manchester&appid=15ee7b1b8b63ce1967cb70787d8de6e7&units=metric", {mode: "cors"})
-    console.log(response)
+import searchHandler from "./searchHandler.js"
+import changeUM from "./changeum.js"
 
-    const data = await response.json();
-    console.log(data)
+const unit = "C"
+const searchForm = document.querySelector("#form");
+const unitButton = document.querySelector("#unit-button")
 
-}
+searchForm.addEventListener("submit", searchHandler)
+unitButton.addEventListener("click", changeUM)
 
-apiCall()
+
+//rewrite the code so that the desired values are saved to an array and then that array is used to recalculate temps and render them
